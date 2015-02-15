@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solitaire", "Solitaire", "{746E6E24-6254-49F3-BE16-8B3DE90C5090}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Solitaire", "Solitaire\Solitaire\Solitaire.csproj", "{36261614-8E98-47C9-8000-02FE2D2671B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinSolitaire", "WinSolitaire\WinSolitaire.csproj", "{AF39E0D7-080E-4E8F-854A-E4C320D31337}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nu.Gaming.TurnBasedEngine", "Nu.Gaming.TurnBasedEngine\Nu.Gaming.TurnBasedEngine.csproj", "{BB05F4CE-3E8F-47C7-A3B1-1C7872109D69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36261614-8E98-47C9-8000-02FE2D2671B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36261614-8E98-47C9-8000-02FE2D2671B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36261614-8E98-47C9-8000-02FE2D2671B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36261614-8E98-47C9-8000-02FE2D2671B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF39E0D7-080E-4E8F-854A-E4C320D31337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF39E0D7-080E-4E8F-854A-E4C320D31337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF39E0D7-080E-4E8F-854A-E4C320D31337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF39E0D7-080E-4E8F-854A-E4C320D31337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB05F4CE-3E8F-47C7-A3B1-1C7872109D69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB05F4CE-3E8F-47C7-A3B1-1C7872109D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB05F4CE-3E8F-47C7-A3B1-1C7872109D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB05F4CE-3E8F-47C7-A3B1-1C7872109D69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{36261614-8E98-47C9-8000-02FE2D2671B3} = {746E6E24-6254-49F3-BE16-8B3DE90C5090}
+		{AF39E0D7-080E-4E8F-854A-E4C320D31337} = {746E6E24-6254-49F3-BE16-8B3DE90C5090}
+	EndGlobalSection
+EndGlobal
