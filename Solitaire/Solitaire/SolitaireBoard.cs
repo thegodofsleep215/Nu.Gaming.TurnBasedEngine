@@ -1,5 +1,6 @@
-﻿using System.Collections.Generic;
-using Nu.Gaming.TurnedBasedEngine;
+﻿using System;
+using System.Collections.Generic;
+using Nu.Gaming.TurnBasedEngine;
 using Solitaire.GameObjects;
 using Solitaire.ViewModel;
 
@@ -24,7 +25,7 @@ namespace Solitaire
         private PlayZone pzSix;
         private PlayZone pzSeven;
 
-        public VisibleGameState GetGameState()
+        private VisibleGameState GetGameState()
         {
             return new VisibleGameState
             {
@@ -32,6 +33,10 @@ namespace Solitaire
                 CardsInPile = pile.Cards.Count,
             };
         }
+
+        public event Action<VisibleGameState> GameStateUpdated;
+
+
 
         public SolitaireBoard()
         {
@@ -64,6 +69,11 @@ namespace Solitaire
             pzSeven = new PlayZone(this, stack, cards.Pop(), 7);
 
             deck = new Deck(this, cards);
+        }
+
+        protected virtual void OnGameStateUpdated()
+        {
+            GameStateUpdated?.Invoke(GetGameState());
         }
     }
 }

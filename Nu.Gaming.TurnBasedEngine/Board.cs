@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
-namespace Nu.Gaming.TurnedBasedEngine
+namespace Nu.Gaming.TurnBasedEngine
 {
     class Subscription
     {
@@ -73,5 +72,7 @@ namespace Nu.Gaming.TurnedBasedEngine
         {
             subscriptions.Publish<T>(evt);
         }
+
+        public Guid ObjectGuid { get; set; }
     }
 }

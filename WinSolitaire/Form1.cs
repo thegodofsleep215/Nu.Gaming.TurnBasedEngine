@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 using Solitaire;
+using Solitaire.ViewModel;
 
 namespace WinSolitaire
 {
@@ -19,11 +20,29 @@ namespace WinSolitaire
 
         private float deckX = 10;
         private float deckY = 10;
+        private VisibleGameState gameState = new VisibleGameState();
+
         #endregion
 
         public Form1()
         {
             InitializeComponent();
+            NewGame();
+        }
+
+        private void NewGame()
+        {
+            lock (board)
+            {
+                board = new SolitaireBoard();
+                board.GameStateUpdated += (gs) =>
+                {
+                    lock (gameState)
+                    {
+                        gameState = gs;
+                    }
+                };
+            }
         }
 
         private void DrawFaceDownCard(Graphics g, float x, float y)

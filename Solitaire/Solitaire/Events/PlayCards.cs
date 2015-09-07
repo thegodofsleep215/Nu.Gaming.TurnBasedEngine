@@ -1,16 +1,17 @@
-﻿using Nu.Gaming.TurnedBasedEngine;
+﻿using System;
+using Nu.Gaming.TurnBasedEngine;
 using Solitaire.GameObjects;
 
 namespace Solitaire.Events
 {
     public class PlayCards : GameEvent
     {
-        public PlayCards(IGameObject originatingGameObject, PlayingCard card, int finishZone) : base(originatingGameObject)
+        public PlayCards(Guid originatingGameObjectGuid, PlayingCard card, int finishZone) : base(originatingGameObjectGuid)
         {
             Cards = new[]{card};
         }
-        public PlayCards(IGameObject originatingGameObject, PlayingCard[] cardses, int finishZone)
-            : base(originatingGameObject)
+        public PlayCards(Guid originatingGameObjectGuid, PlayingCard[] cardses, int finishZone)
+            : base(originatingGameObjectGuid)
         {
             Cards = cardses;
         }

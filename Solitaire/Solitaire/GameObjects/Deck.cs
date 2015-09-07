@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Nu.Gaming.TurnedBasedEngine;
+using Nu.Gaming.TurnBasedEngine;
 using Solitaire.Events;
 
 namespace Solitaire.GameObjects
@@ -9,10 +9,11 @@ namespace Solitaire.GameObjects
     public class Deck : GameZone
     {
         private readonly int cardsPerFlip;
-        public Stack<PlayingCard> PlayingCards { get; private set; }
+        public Stack<PlayingCard> PlayingCards { get; }
 
         public Deck(Board board, Stack<PlayingCard> shuffledDeck, int cardsPerFlip = 3) : base(board)
         {
+            ObjectGuid = Guid.NewGuid();
             this.cardsPerFlip = cardsPerFlip;
             board.Subscribe<ResetDeck>(ResetDeckCallBack);
             PlayingCards = shuffledDeck;
@@ -26,7 +27,7 @@ namespace Solitaire.GameObjects
             {
                 cardsToSend[i] = PlayingCards.Pop();
             }
-            Board.Publish(new FlipCards(this, cardsToSend));
+            Board.Publish(new FlipCards(ObjectGuid, cardsToSend));
         }
 
         public void ResetDeckCallBack(ResetDeck evt)

@@ -1,4 +1,5 @@
-using Nu.Gaming.TurnedBasedEngine;
+using System;
+using Nu.Gaming.TurnBasedEngine;
 using Solitaire.GameObjects;
 
 namespace Solitaire.Events
@@ -7,7 +8,7 @@ namespace Solitaire.Events
     {
         public PlayingCard[] PlayingCards { get; private set; } 
 
-        public ResetDeck(IGameObject originatingGameObject, PlayingCard[] playingCards) : base(originatingGameObject)
+        public ResetDeck(Guid originatingGameObjectGuid, PlayingCard[] playingCards) : base(originatingGameObjectGuid)
         {
             PlayingCards = playingCards;
         }

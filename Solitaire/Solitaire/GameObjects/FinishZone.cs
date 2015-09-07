@@ -1,15 +1,17 @@
-﻿using System.Collections.Generic;
-using Nu.Gaming.TurnedBasedEngine;
+﻿using System;
+using System.Collections.Generic;
+using Nu.Gaming.TurnBasedEngine;
 using Solitaire.Events;
 
 namespace Solitaire.GameObjects
 {
     public class FinishZone : GameZone
     {
-        public Stack<PlayingCard> Cards { get; private set; }
+        public Stack<PlayingCard> Cards { get; }
 
         public FinishZone(Board board) : base(board)
         {
+            ObjectGuid = Guid.NewGuid();
             Cards = new Stack<PlayingCard>();
         }
 
@@ -18,7 +20,7 @@ namespace Solitaire.GameObjects
             Cards.Push(evt.Card);
             if (Cards.Count == 13)
             {
-                Board.Publish(new SuiteFinished(this, evt.Card.CardSuite));
+                Board.Publish(new SuiteFinished(ObjectGuid, evt.Card.CardSuite));
             }
         }
     }

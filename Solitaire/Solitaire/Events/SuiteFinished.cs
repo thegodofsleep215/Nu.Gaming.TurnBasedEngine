@@ -1,4 +1,5 @@
-﻿using Nu.Gaming.TurnedBasedEngine;
+﻿using System;
+using Nu.Gaming.TurnBasedEngine;
 using Solitaire.GameObjects;
 
 namespace Solitaire.Events
@@ -7,7 +8,7 @@ namespace Solitaire.Events
     {
         public Suite CardSuite { get; private set; }
 
-        public SuiteFinished(IGameObject originatingGameObject, Suite cardSuite) : base(originatingGameObject)
+        public SuiteFinished(Guid originatingGameObjectGuid, Suite cardSuite) : base(originatingGameObjectGuid)
         {
             CardSuite = cardSuite;
         }

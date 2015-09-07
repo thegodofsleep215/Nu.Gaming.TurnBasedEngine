@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using Nu.Gaming.TurnedBasedEngine;
+using Nu.Gaming.TurnBasedEngine;
 using Solitaire.Events;
 
 namespace Solitaire.GameObjects
@@ -8,12 +9,13 @@ namespace Solitaire.GameObjects
     public class PlayZone : GameZone
     {
         private readonly int playPosition;
-        public Stack<PlayingCard> FaceDownCards { get; private set; }
+        public Stack<PlayingCard> FaceDownCards { get; }
 
-        public Stack<PlayingCard> FaceUpCards { get; private set; } 
+        public Stack<PlayingCard> FaceUpCards { get; } 
 
         public PlayZone(Board board, Stack<PlayingCard> faceDownCards, PlayingCard faceUpCard, int playPosition) : base(board)
         {
+            ObjectGuid = Guid.NewGuid();
             FaceDownCards = faceDownCards;
             this.playPosition = playPosition;
             FaceUpCards = new Stack<PlayingCard>();
@@ -38,7 +40,7 @@ namespace Solitaire.GameObjects
 
         public void PlayCardToFinsihZone(int position)
         {
-            Board.Publish(new PlayCardToFinish(this, position, FaceUpCards.Pop()));
+            Board.Publish(new PlayCardToFinish(ObjectGuid, position, FaceUpCards.Pop()));
             TryTurnCardFaceUp();
         }
 
@@ -46,7 +48,7 @@ namespace Solitaire.GameObjects
         {
             if (FaceUpCards.Count == 0 && FaceDownCards.Count > 0)
             {
-                Board.Publish(new PlayCards(this, FaceDownCards.Pop(), playPosition));
+                Board.Publish(new PlayCards(ObjectGuid, FaceDownCards.Pop(), playPosition));
             }
         }
     }

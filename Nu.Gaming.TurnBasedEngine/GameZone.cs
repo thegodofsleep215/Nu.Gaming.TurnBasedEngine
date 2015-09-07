@@ -1,4 +1,6 @@
-namespace Nu.Gaming.TurnedBasedEngine
+using System;
+
+namespace Nu.Gaming.TurnBasedEngine
 {
     public abstract class GameZone : IGameObject
     {
@@ -8,5 +10,6 @@ namespace Nu.Gaming.TurnedBasedEngine
         }
 
         public Board Board { get; private set; }
+        public Guid ObjectGuid { get; set; }
     }
 }

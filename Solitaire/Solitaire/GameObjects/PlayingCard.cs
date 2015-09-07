@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Nu.Gaming.TurnedBasedEngine;
+using Nu.Gaming.TurnBasedEngine;
 
 namespace Solitaire.GameObjects
 {
@@ -34,6 +34,7 @@ namespace Solitaire.GameObjects
     {
         public PlayingCard(Suite suite, CardValue cardValue)
         {
+            ObjectGuid = Guid.NewGuid();
             CardSuite = suite;
             CardValue = cardValue;
         }
@@ -64,5 +65,7 @@ namespace Solitaire.GameObjects
         {
             return string.Format("{0} of {1}", CardValue, CardSuite);
         }
+
+        public Guid ObjectGuid { get; set; }
     }
 }

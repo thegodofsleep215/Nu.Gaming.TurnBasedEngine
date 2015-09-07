@@ -1,12 +1,14 @@
-namespace Nu.Gaming.TurnedBasedEngine
+using System;
+
+namespace Nu.Gaming.TurnBasedEngine
 {
     public class GameEvent
     {
-        public GameEvent(IGameObject originatingGameObject)
+        public GameEvent(Guid originatingGameObjectGuid)
         {
-            OriginatingGameObject = originatingGameObject;
+            OriginatingGameObjectGuid = originatingGameObjectGuid;
         }
 
-        public IGameObject OriginatingGameObject { get; set; }
+        public Guid OriginatingGameObjectGuid { get; set; }
     }
 }
