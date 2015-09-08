@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Board.cs" />
-    <Compile Include="GameEvent.cs" />
+    <Compile Include="GameMessage.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="GameZone.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

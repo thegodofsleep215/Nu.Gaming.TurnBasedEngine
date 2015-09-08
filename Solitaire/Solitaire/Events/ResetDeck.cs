@@ -4,7 +4,7 @@ using Solitaire.GameObjects;
 
 namespace Solitaire.Events
 {
-    public class ResetDeck : GameEvent
+    public class ResetDeck : GameMessage
     {
         public PlayingCard[] PlayingCards { get; private set; } 
 

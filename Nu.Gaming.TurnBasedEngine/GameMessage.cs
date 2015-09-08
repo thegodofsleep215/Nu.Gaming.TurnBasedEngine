@@ -2,9 +2,9 @@ using System;
 
 namespace Nu.Gaming.TurnBasedEngine
 {
-    public class GameEvent
+    public class GameMessage
     {
-        public GameEvent(Guid originatingGameObjectGuid)
+        public GameMessage(Guid originatingGameObjectGuid)
         {
             OriginatingGameObjectGuid = originatingGameObjectGuid;
         }

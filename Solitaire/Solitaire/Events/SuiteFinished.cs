@@ -4,7 +4,7 @@ using Solitaire.GameObjects;
 
 namespace Solitaire.Events
 {
-    public class SuiteFinished : GameEvent
+    public class SuiteFinished : GameMessage
     {
         public Suite CardSuite { get; private set; }
 

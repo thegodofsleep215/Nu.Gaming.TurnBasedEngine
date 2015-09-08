@@ -4,7 +4,7 @@ using Solitaire.GameObjects;
 
 namespace Solitaire.Events
 {
-    public class PlayCardToFinish : GameEvent
+    public class PlayCardToFinish : GameMessage
     {
         public int Position { get; private set; }
 

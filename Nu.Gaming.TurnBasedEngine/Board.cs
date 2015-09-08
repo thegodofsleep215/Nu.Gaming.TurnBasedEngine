@@ -48,7 +48,8 @@ namespace Nu.Gaming.TurnBasedEngine
             foreach (var s in subs[t])
             {
                 var cb = (Action<T>) s.Callback;
-                Task.Factory.StartNew(() => cb(evt));
+                //Task.Factory.StartNew(() => cb(evt));
+                cb(evt);
                 // TODO: Store for saftey so we can check for dead lock?
             }
         }
@@ -58,17 +59,17 @@ namespace Nu.Gaming.TurnBasedEngine
     {
         private readonly Subscriptions subscriptions = new Subscriptions();
 
-        public Guid Subscribe<T>(Action<T> callback) where T : GameEvent
+        public Guid Subscribe<T>(Action<T> callback) where T : GameMessage
         {
             return subscriptions.Subscribe(callback);
         }
 
-        public void Unsubscribe<T>(Guid guid) where T : GameEvent
+        public void Unsubscribe<T>(Guid guid) where T : GameMessage
         {
             subscriptions.Unsubscribe<T>(guid);
         }
 
-        public void Publish<T>(T evt) where T : GameEvent
+        public void Publish<T>(T evt) where T : GameMessage
         {
             subscriptions.Publish<T>(evt);
         }

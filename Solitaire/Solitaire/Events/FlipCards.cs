@@ -4,7 +4,7 @@ using Solitaire.GameObjects;
 
 namespace Solitaire.Events
 {
-    public class FlipCards : GameEvent
+    public class FlipCards : GameMessage
     {
         public FlipCards(Guid originatingGameObjectGuid, PlayingCard[] flippedCards) : base(originatingGameObjectGuid)
         {

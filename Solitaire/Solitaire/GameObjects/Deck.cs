@@ -11,7 +11,7 @@ namespace Solitaire.GameObjects
         private readonly int cardsPerFlip;
         public Stack<PlayingCard> PlayingCards { get; }
 
-        public Deck(Board board, Stack<PlayingCard> shuffledDeck, int cardsPerFlip = 3) : base(board)
+        public Deck(Board board, Stack<PlayingCard> shuffledDeck, int cardsPerFlip = 1) : base(board)
         {
             ObjectGuid = Guid.NewGuid();
             this.cardsPerFlip = cardsPerFlip;
